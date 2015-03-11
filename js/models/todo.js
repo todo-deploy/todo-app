@@ -21,6 +21,11 @@ var app = app || {};
 			this.save({
 				completed: !this.get('completed')
 			});
+		},
+
+		save: function (attrs, options) {
+			options = _.extend({patch: true}, options);
+			Backbone.Model.prototype.save.call(this, attrs, options);
 		}
 	});
 })();
