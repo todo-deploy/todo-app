@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "TODO Backend with node, coffee and mongo",
   "main": "index.js",
+  "scripts": {
+    "start": "node app/index.js"
+  },
   "dependencies": {
     "backbone": "^1.1.2",
     "backbone.localstorage": "^1.1.16",

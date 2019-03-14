@@ -5,4 +5,4 @@ A [todo-backend](http://todobackend.com) implementation using node.js, express, 
 
 ### Running
 
-`DB=mongodb://todo:todo123@ds213896.mlab.com:13896/heroku_gs39gr2d PORT=8080 node index.js`
+`DB=mongodb://todo:todo123@ds213896.mlab.com:13896/heroku_gs39gr2d PORT=8080 npm start`
