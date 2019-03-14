@@ -4,7 +4,8 @@
   "description": "TODO Backend with node, coffee and mongo",
   "main": "index.js",
   "scripts": {
-    "start": "node app/index.js"
+    "start": "node app/index.js",
+    "test": "mocha test/"
   },
   "dependencies": {
     "backbone": "^1.1.2",
@@ -18,6 +19,10 @@
     "express": "^4.12.0",
     "mongoose": "5.4.19",
     "mongoose-auto-increment": "5.0.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.1",
+    "mongodb": "^2.0.25"
   },
   "author": "Dan Siwiec"
 }
