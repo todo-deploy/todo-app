@@ -1,5 +1,8 @@
-# Backbone.js TodoMVC Example
+# todo-backend-node-coffee-mongo
 
-A slightly modified version of TodoMVC Backbone implementation, using a real backend
+A [todo-backend](http://todobackend.com) implementation using node.js, express, coffeescript and mongo.
 
-For the original version, see [TodoMVC](http://todomvc.com/)
+
+### Running
+
+`DB=mongodb://todo:todo123@ds213896.mlab.com:13896/heroku_gs39gr2d PORT=8080 node index.js`
