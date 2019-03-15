@@ -7,7 +7,10 @@ var app = app || {};
 	// Todo Collection
 	// ---------------
 
+	// The collection of todos is backed by *localStorage* instead of a remote
+	// server.
 	var Todos = Backbone.Collection.extend({
+		url: '/api',
 		// Reference to this collection's model.
 		model: app.Todo,
 

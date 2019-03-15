@@ -1,7 +1,6 @@
-# todo-backend-node-coffee-mongo
+# todo-app
 
-A [todo-backend](http://todobackend.com) implementation using node.js, express, coffeescript and mongo.
-
+Backbone + node.js todo application, used as an example for provisioning techniques.
 
 ### Running
 

@@ -72,8 +72,10 @@ var app = app || {};
 
 		// Switch this view into `"editing"` mode, displaying the input field.
 		edit: function () {
+			var textLength = this.$input.val().length;
 			this.$el.addClass('editing');
 			this.$input.focus();
+			this.$input[0].setSelectionRange(textLength, textLength);
 		},
 
 		// Close the `"editing"` mode, saving changes to the todo.
@@ -91,15 +93,6 @@ var app = app || {};
 
 			if (trimmedValue) {
 				this.model.save({ title: trimmedValue });
-
-				if (value !== trimmedValue) {
-					// Model values changes consisting of whitespaces only are
-					// not causing change to be triggered Therefore we've to
-					// compare untrimmed version with a trimmed one to check
-					// whether anything changed
-					// And if yes, we've to trigger change event ourselves
-					this.model.trigger('change');
-				}
 			} else {
 				this.clear();
 			}
