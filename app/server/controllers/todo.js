@@ -8,30 +8,31 @@ const toWireType = (todo, baseUrl) => {
   }
 }
 
-const Todo = require('../models/todo')
+let Todo
+const model = () => Todo || (Todo = require('../models/todo'))
 
 const findAll = async baseUrl => {
-  let todos = await Todo.find().exec()
+  let todos = await model().find().exec()
   return todos.map(todo => toWireType(todo,baseUrl))
 }
 
 const findById = async (id, baseUrl) => {
-  let todo = await Todo.findOne({'id': id}).exec()
+  let todo = await model().findOne({'id': id}).exec()
   return toWireType(todo, baseUrl)
 }
 
 const create = async (todo, baseUrl) => {
   todo.completed = false
-  await Todo.create(todo)
+  await model().create(todo)
   return toWireType(todo, baseUrl)
 }
 
 const update = async (id, patch, baseUrl) => {
-  let todo = await Todo.findOneAndUpdate({id: id}, patch).exec()
+  let todo = await model().findOneAndUpdate({id: id}, patch).exec()
   return toWireType(todo, baseUrl)
 }
 
-const deleteAll = () => Todo.deleteMany().exec()
-const deleteById = id => Todo.deleteOne({id}).exec()
+const deleteAll = () => model().deleteMany().exec()
+const deleteById = id => model().deleteOne({id}).exec()
 
 module.exports = {findAll, findById, create, update, deleteAll, deleteById}
