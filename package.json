@@ -21,7 +21,7 @@
     "underscore": "^1.7.0"
   },
   "devDependencies": {
-    "mocha": "^6.0.2",
+    "mocha": "^10.2.0",
     "mongodb": "^3.1.13"
   },
   "author": "Dan Siwiec"
